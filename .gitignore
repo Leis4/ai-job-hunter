@@ -1,0 +1,56 @@
+# Secrets and local config
+.env
+.env.*
+!.env.example
+*.key
+*.token
+*.pem
+*.session
+cookies.txt
+
+# Personal data
+data/
+config/*.json
+!config/*.example.json
+output/
+backups/
+logs/
+exports/
+processed/
+inbox/
+inbox_messages/
+sources/
+*.db
+*.sqlite
+*.sqlite3
+*.db-wal
+*.db-shm
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archives and large files
+*.zip
+*.7z
+*.rar
+*.pdf

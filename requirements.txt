@@ -1,0 +1,9 @@
+# Опциональные зависимости. Ядро работает на стандартной библиотеке Python 3.12+.
+# Установка: py -3 -m pip install -r requirements.txt
+playwright>=1.45
+python-docx>=1.1.0
+pypdf>=5.0
+
+# Необязательно:
+# rapidfuzz  — терпимое к опечаткам сопоставление навыков (есть fallback)
+# sqlite-vec — векторный индекс SQLite (есть cosine-fallback)

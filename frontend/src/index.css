@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 14% 97%;
+    --foreground: 232 18% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 232 18% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 232 18% 12%;
+    --primary: 235 68% 56%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 10% 95%;
+    --secondary-foreground: 232 18% 12%;
+    --muted: 240 10% 95%;
+    --muted-foreground: 235 8% 46%;
+    --accent: 238 60% 96%;
+    --accent-foreground: 235 68% 46%;
+    --destructive: 350 72% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 10% 90%;
+    --input: 240 10% 88%;
+    --ring: 235 68% 56%;
+    --success: 158 64% 33%;
+    --warning: 32 90% 45%;
+    --radius: 0.75rem;
+  }
+  .dark {
+    --background: 233 20% 8%;
+    --foreground: 220 20% 96%;
+    --card: 233 18% 11%;
+    --card-foreground: 220 20% 96%;
+    --popover: 233 18% 11%;
+    --popover-foreground: 220 20% 96%;
+    --primary: 235 76% 68%;
+    --primary-foreground: 233 24% 9%;
+    --secondary: 233 16% 16%;
+    --secondary-foreground: 220 20% 96%;
+    --muted: 233 16% 16%;
+    --muted-foreground: 225 12% 67%;
+    --accent: 235 24% 19%;
+    --accent-foreground: 235 80% 84%;
+    --destructive: 350 68% 58%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 233 14% 20%;
+    --input: 233 14% 22%;
+    --ring: 235 76% 68%;
+    --success: 158 60% 52%;
+    --warning: 38 90% 60%;
+  }
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground antialiased; font-family: Inter, "Golos Text", "Segoe UI", system-ui, sans-serif; }
+  ::selection { @apply bg-primary/20; }
+}
+
+@layer components {
+  .focus-ring { @apply outline-none ring-offset-2 ring-offset-background focus-visible:ring-2 focus-visible:ring-ring; }
+  .scrollbar-thin { scrollbar-width: thin; scrollbar-color: hsl(var(--border)) transparent; }
+}
+
+/* subtle page entrance, no heavy animation */
+@keyframes rise { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+.animate-rise { animation: rise .18s ease-out both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise { animation: none; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
